@@ -58,10 +58,16 @@ int main(){
             player.jump();
             player.setFloating(false);
         }
-        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
-            player.moveLeft();
-		else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
-            player.moveRight();
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+		{
+			player.moveLeft();
+			player.setFloating(false);
+		}
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+		{
+			player.moveRight();
+			player.setFloating(false);
+		}
 		else
             player.haltHorizontal();
 
