@@ -65,6 +65,16 @@ int main(){
 		else
             player.haltHorizontal();
 
+		// Check Winblock Collision
+		if (player.isColliding(wind))
+		{
+			VectorPhysics windBlockVector;
+			windBlockVector.setXVec(-0.03f);
+
+			// Apply vector to player
+			player.getVector()->addVector(windBlockVector);
+		}
+
         player.update();
 
         helper.platformCollide(player, platform1);
